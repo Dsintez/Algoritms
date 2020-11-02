@@ -12,13 +12,10 @@ public class SpeedTestSort {
         Array<Integer> data3 = new ArrayImpl<Integer>();
         long time;
         for (int i = 0; i < 100_000; i++) {
-            data1.add(random.nextInt(200_000));
-        }
-        for (int i = 0; i < 100_000; i++) {
-            data2.add(data1.get(i));
-        }
-        for (int i = 0; i < 100_000; i++) {
-            data3.add(data1.get(i));
+            int r1 = random.nextInt(200_000);
+            data1.add(r1);
+            data2.add(r1);
+            data3.add(r1);
         }
 
         System.out.println("Исходный массив1");
