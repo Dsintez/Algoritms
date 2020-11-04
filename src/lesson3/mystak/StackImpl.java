@@ -2,7 +2,7 @@ package lesson3.mystak;
 
 public class StackImpl<E> implements Stack<E> {
 
-    private final E[] data;
+    private E[] data;
     private int size;
 
     @SuppressWarnings("unchecked")

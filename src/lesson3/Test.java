@@ -5,14 +5,36 @@ import lesson3.deque.DequeImpl;
 import lesson3.myqueue.Queue;
 import lesson3.myqueue.QueueImpl;
 import lesson3.mystak.Stack;
+import lesson3.mystak.StackForString;
 import lesson3.mystak.StackImpl;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Test {
 
     public static void main(String[] args) {
-//        testStack();
+        testStack();
 //        testQueue();
         testDeque();
+        programReverse();
+    }
+
+    private static void programReverse() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String str;
+        StackForString stack;
+        while (true) {
+            System.out.print("Введите слово: ");
+            try {
+                str = reader.readLine();
+                stack = new StackForString(str);
+                System.out.println(stack.reverse() + " :sreveR");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private static void testDeque() {
