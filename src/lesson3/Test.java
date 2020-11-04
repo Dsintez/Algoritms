@@ -1,5 +1,7 @@
 package lesson3;
 
+import lesson3.deque.Deque;
+import lesson3.deque.DequeImpl;
 import lesson3.myqueue.Queue;
 import lesson3.myqueue.QueueImpl;
 import lesson3.mystak.Stack;
@@ -9,7 +11,29 @@ public class Test {
 
     public static void main(String[] args) {
 //        testStack();
-        testQueue();
+//        testQueue();
+        testDeque();
+    }
+
+    private static void testDeque() {
+        Deque<Integer> deque = new DequeImpl<>(6);
+
+        System.out.println(deque.insertRight(4));
+        System.out.println(deque.insertRight(5));
+        System.out.println(deque.insertRight(6));
+        System.out.println(deque.insertLeft(3));
+        System.out.println(deque.insertLeft(2));
+        System.out.println(deque.insertLeft(1));
+
+        System.out.println("Deque peek right: " + deque.peekRight());
+        System.out.println("Deque peek left: " + deque.peekLeft());
+        System.out.println("Deque size: " + deque.size());
+        System.out.println("Deque is Full: " + deque.isFull());
+
+        while (!deque.isEmpty()) {
+            System.out.println(deque.removeRight());
+            System.out.println(deque.removeLeft());
+        }
     }
 
     private static void testQueue() {
