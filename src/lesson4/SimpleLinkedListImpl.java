@@ -1,5 +1,8 @@
 package lesson4;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class SimpleLinkedListImpl<E> implements LinkedList<E> {
 
     protected int size;
@@ -96,5 +99,33 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E> {
     @Override
     public E getFirst() {
         return firstElement.item;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Itr() {
+        };
+    }
+
+    private class Itr implements Iterator<E> {
+
+        int cursor;
+        Node<E> node = firstElement;
+
+        @Override
+        public boolean hasNext() {
+            return cursor != size;
+        }
+
+        @Override
+        public E next() {
+            int i = cursor;
+            if (i >= size)
+                throw new NoSuchElementException();
+            Node<E> node = this.node;
+            this.node = node.next;
+            cursor++;
+            return node.item;
+        }
     }
 }

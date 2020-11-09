@@ -3,9 +3,6 @@ package lesson4;
 import lesson3.myqueue.Queue;
 import lesson3.mystak.Stack;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TestMain4 {
 
     public static void main(String[] args) {
@@ -16,16 +13,6 @@ public class TestMain4 {
     }
 
     private static void testForEach() {
-        List<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(3);
-        arrayList.add(4);
-
-        for (Integer integer : arrayList) {
-            System.out.println(integer);
-        }
-
         LinkedList<Integer> linkedList = new SimpleLinkedListImpl<>();
         linkedList.insertFirst(1);
         linkedList.insertFirst(2);
@@ -34,9 +21,9 @@ public class TestMain4 {
 
         linkedList.display();
 
-//        for(Integer value: linkedList) {
-//            System.out.println(value);
-//        }
+        for(Integer value: linkedList) {
+            System.out.println(value);
+        }
     }
 
     private static void testLinkedList() {
