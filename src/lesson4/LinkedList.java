@@ -1,6 +1,6 @@
 package lesson4;
 
-public interface LinkedList<E> {
+public interface LinkedList<E> extends Iterable<E>{
 
     /**
      * O(1)
